@@ -23,7 +23,7 @@
           id="shoping"
           class="mr-5 text-[1.5rem] text-white/40 active:scale-50 transition-all"
         >
-          <i class="fa-solid fa-cart-shopping"></i>
+          <i class="fa-solid fa-cart-shopping animate-bounce"></i>
         </div>
         <span
           id="quantity"
@@ -32,91 +32,60 @@
         >
         <!-- information of products -->
         <div
-          class="inforshoping w-[90%] h-[500px] rounded-3xl z-40 shadow-sha bg-slate-300 m-auto absolute top-[80px] right-[50%] translate-x-[50%] overflow-hidden"
+          class="inforshoping hidden w-[90%] h-[550px] rounded-3xl z-40 shadow-sha bg-slate-300 m-auto absolute top-[80px] right-[50%] translate-x-[50%] overflow-hidden"
         >
           <button
             id="cancel"
             class="text-black text-[1.4rem] pt-3 absolute left-[95%] translate-x-[-100%] hover:text-red-700 active:scale-50 transition-all"
           >
-            <i class="fa-solid fa-x"></i>
+            <i class="fa-solid fa-x animate-bounce"></i>
           </button>
           <div class="w-[90%] m-auto">
-            <h4 class="text-black text-[1.2rem] mt-[20px]">Your Card</h4>
+            <h4 class="text-sky-200 font-[500] text-[1.4rem] mt-[20px]">
+              Your Card
+            </h4>
             <div class="w-full h-[2px] bg-gray-500"></div>
             <div class="w-full h-[315px] overflow-scroll">
-              <ul id="productlist" class="mt-2">
-                <!-- <li
-                  class="flex items-center gap-5 p-2 bg-slate-400 hover:bg-slate-200 transition-all rounded-3xl mb-2"
-                >
-                  <img src="/public/images/im1.png" alt="" width="50px" />
-                  <p>C++</p>
-                  <span>Price 20$</span>
-                  <div
-                    class="flex gap-3 ml-5 px-[20px] py-[5px] bg-slate-300 rounded-full"
-                  >
-                    <button
-                      class="px-[7px] py-[1px] rounded-full bg-slate-600 text-white active:scale-50 transition-all"
-                    >
-                      +
-                    </button>
-                    <div class="text-[1rem] font-[500]">1</div>
-                    <button
-                      class="px-[7px] py-[1px] rounded-full bg-slate-600 text-white active:scale-50 transition-all"
-                    >
-                      -
-                    </button>
-                  </div>
-                </li> -->
-                <!-- <li
-                  class="flex items-center gap-5 p-2 bg-slate-400 rounded-3xl mb-2"
-                >
-                  <img src="/public/images/im1.png" alt="" width="50px" />
-                  <p>C++</p>
-                  <span>Price 20$</span>
-                </li>
-                <li
-                  class="flex items-center gap-5 p-2 bg-slate-400 rounded-3xl mb-2"
-                >
-                  <img src="/public/images/im1.png" alt="" width="50px" />
-                  <p>C++</p>
-                  <span>Price 20$</span>
-                </li>
-                <li
-                  class="flex items-center gap-5 p-2 bg-slate-400 rounded-3xl mb-2"
-                >
-                  <img src="/public/images/im1.png" alt="" width="50px" />
-                  <p>C++</p>
-                  <span>Price 20$</span>
-                </li>
-                <li
-                  class="flex items-center gap-5 p-2 bg-slate-400 rounded-3xl mb-2"
-                >
-                  <img src="/public/images/im1.png" alt="" width="50px" />
-                  <p>C++</p>
-                  <span>Price 20$</span>
-                </li>
-                <li
-                  class="flex items-center gap-5 p-2 bg-slate-400 rounded-3xl mb-2"
-                >
-                  <img src="/public/images/im1.png" alt="" width="50px" />
-                  <p>C++</p>
-                  <span>Price 20$</span>
-                </li> -->
-              </ul>
+              <ul id="productlist" class="mt-2 w-full"></ul>
             </div>
           </div>
           <!-- payment of products -->
           <div
-            class="flex fixed bottom-[0] rounded-3xl flex-col items-center w-full py-1 bg-slate-800"
+            class="flex fixed bottom-[0] rounded-3xl flex-col items-center w-full py-2 bg-slate-800"
           >
-            <div id="totalprice">
-              <!-- <button class="bg-sky-400 w-[90%] py-3 rounded-md"></button> -->
-            </div>
-            <div>
+            <div
+              id="totalprice"
+              class="bg-white w-[90%] rounded-3xl py-4 flex flex-col"
+            >
+              <!-- <button
+                class="py-1 w-[60%] m-auto rounded-3xl bg-slate-700 hover:bg-sky-700 mb-2 text-white"
+              >
+                <i
+                  class="fa-solid fa-arrow-down-wide-short fa-flip-vertical fa-sm mr-5 px-[10px] py-[15px] bg-white rounded-full text-black"
+                ></i
+                >Quantity = 1
+              </button>
               <button
-                class="bg-sky-500 px-[30px] font-[500] text-white py-[10px] rounded-3xl mt-4"
+                class="py-1 w-[60%] m-auto rounded-3xl bg-slate-700 hover:bg-sky-700 text-white"
+              >
+                <i
+                  class="fa-regular fa-money-bill-1 mr-5 p-2 bg-white rounded-full text-black"
+                ></i
+                >price = 40$
+              </button> -->
+            </div>
+            <div class="flex justify-center gap-2">
+              <button
+                class="bg-sky-500 px-[30px] font-[500] text-white py-[10px] rounded-3xl mt-4 hover:bg-sky-900 active:scale-50 transition-all"
               >
                 Pay now
+              </button>
+              <button
+                class="bg-sky-500 px-[30px] font-[500] text-white py-[5px] rounded-3xl mt-4 text-[1.5rem] hover:bg-sky-900 active:scale-50 transition-all"
+              >
+                <a href="https://t.me/w9rak"
+                  ><i class="fa-brands fa-telegram"></i
+                ></a>
               </button>
             </div>
           </div>

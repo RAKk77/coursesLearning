@@ -129,14 +129,16 @@ function reload() {
   let count = 0;
   let total = 0;
   checklist.forEach((item, key) => {
-    total = parseInt(item.price * item.qty);
-    console.log(total);
+    let price = parseFloat(item.price.replace("$", "")); // Extract number from price string
+    let subtotal = price * item.qty;
+    total += subtotal;
     count += item.qty;
     let li = document.createElement("li");
     li.classList.add(
       "flex",
+      "justify-between",
       "items-center",
-      "gap-5",
+      "gap-3",
       "p-2",
       "bg-slate-400",
       "rounded-3xl",
@@ -146,19 +148,21 @@ function reload() {
     );
 
     li.innerHTML = `
-    <img src="${item.image}"  width="40px"/>
-    <p>${item.name}</p>
-    <span>${item.price}</span>
+    <div class="flex gap-2 items-center">
+      <img src="${item.image}"  width="40px"/>
+      <p>${item.name}</p>
+      <span>${item.price}</span>
+    </div>
      <div
-        class="flex items-end gap-3 ml-auto px-[20px] py-[5px] bg-slate-300 rounded-full"
+        class="flex items-end gap-3 mr-2  px-[10px] py-[5px] bg-slate-300 rounded-full"
       >
-        <button
+       <button onclick="changeQuantity(${key}, 1)"
           class="px-[7px] py-[1px] rounded-full bg-slate-600 text-white active:scale-50 transition-all"
         >
           +
         </button>
         <div class="count text-[1rem] font-[500]">${item.qty}</div>
-        <button
+        <button onclick="changeQuantity(${key}, -1)"
           class="px-[7px] py-[1px] rounded-full bg-slate-600 text-white active:scale-50 transition-all"
         >
           -
@@ -169,5 +173,27 @@ function reload() {
   });
 
   quantity.innerHTML = count;
-  totalprice.innerHTML = `<button class="bg-sky-400 w-[90%] py-3 rounded-md">Total price${total}</button>`;
+  totalprice.innerHTML = `<button
+                class="py-1 w-[60%] m-auto rounded-3xl bg-slate-700 hover:bg-sky-700 mb-2 text-white"
+              >
+                <i
+                  class="fa-solid fa-arrow-down-wide-short fa-flip-vertical fa-sm mr-5 px-[10px] py-[15px] bg-white rounded-full text-black"
+                ></i
+                >Quantity = ${count}
+              </button>
+              <button
+                class="py-1 w-[60%] m-auto rounded-3xl bg-slate-700 hover:bg-sky-700 text-white"
+              >
+                <i
+                  class="fa-regular fa-money-bill-1 mr-5 p-2 bg-white rounded-full text-black"
+                ></i
+                >price = $${total}
+              </button>`;
+}
+function changeQuantity(id, delta) {
+  checklist[id].qty += delta;
+  if (checklist[id].qty <= 0) {
+    checklist.splice(id, 1);
+  }
+  reload();
 }
