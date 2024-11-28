@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="main.css" />
     <title>Document</title>
   </head>
-  <body class="font-English bg-sky-200">
+  <body class="font-English bg-slate-900">
     <div class="sm:hidden w-[98%] m-auto mt-2">
       <!-- Card of coourses for learning -->
       <theader
@@ -26,12 +26,13 @@
           <i class="fa-solid fa-cart-shopping"></i>
         </div>
         <span
+          id="quantity"
           class="bg-red-600 text-white px-[8px] py-[2px] text-[15px] rounded-full absolute bottom-[40px] right-[22px] text-center"
           >0</span
         >
         <!-- information of products -->
         <div
-          class="inforshoping hidden w-[90%] h-[500px] rounded-3xl z-40 shadow-sha bg-slate-300 m-auto absolute top-[80px] right-[50%] translate-x-[50%] overflow-hidden"
+          class="inforshoping w-[90%] h-[500px] rounded-3xl z-40 shadow-sha bg-slate-300 m-auto absolute top-[80px] right-[50%] translate-x-[50%] overflow-hidden"
         >
           <button
             id="cancel"
@@ -45,11 +46,26 @@
             <div class="w-full h-[315px] overflow-scroll">
               <ul id="productlist" class="mt-2">
                 <!-- <li
-                  class="flex items-center gap-5 p-2 bg-slate-400 rounded-3xl mb-2"
+                  class="flex items-center gap-5 p-2 bg-slate-400 hover:bg-slate-200 transition-all rounded-3xl mb-2"
                 >
                   <img src="/public/images/im1.png" alt="" width="50px" />
                   <p>C++</p>
                   <span>Price 20$</span>
+                  <div
+                    class="flex gap-3 ml-5 px-[20px] py-[5px] bg-slate-300 rounded-full"
+                  >
+                    <button
+                      class="px-[7px] py-[1px] rounded-full bg-slate-600 text-white active:scale-50 transition-all"
+                    >
+                      +
+                    </button>
+                    <div class="text-[1rem] font-[500]">1</div>
+                    <button
+                      class="px-[7px] py-[1px] rounded-full bg-slate-600 text-white active:scale-50 transition-all"
+                    >
+                      -
+                    </button>
+                  </div>
                 </li> -->
                 <!-- <li
                   class="flex items-center gap-5 p-2 bg-slate-400 rounded-3xl mb-2"
@@ -93,9 +109,9 @@
           <div
             class="flex fixed bottom-[0] rounded-3xl flex-col items-center w-full py-1 bg-slate-800"
           >
-            <button class="bg-sky-400 w-[90%] py-3 rounded-md">
-              TotalProces
-            </button>
+            <div id="totalprice">
+              <!-- <button class="bg-sky-400 w-[90%] py-3 rounded-md"></button> -->
+            </div>
             <div>
               <button
                 class="bg-sky-500 px-[30px] font-[500] text-white py-[10px] rounded-3xl mt-4"

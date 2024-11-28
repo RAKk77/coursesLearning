@@ -55,6 +55,8 @@ const shoping = document.getElementById("shoping");
 let inforshoping = document.querySelector(".inforshoping");
 const cancel = document.getElementById("cancel");
 const productlist = document.querySelector("#productlist");
+const quantity = document.querySelector("#quantity");
+let totalprice = document.querySelector("#totalprice");
 
 let checklist = [];
 function oninto() {
@@ -115,13 +117,21 @@ function addCard(id) {
   // console.log(allProducds[id]);
   if (checklist[id] == null) {
     checklist[id] = allProducds[id];
+    checklist[id].qty = 1;
+  } else {
+    checklist[id].qty += 1;
   }
   reload();
 }
 
 function reload() {
   productlist.innerHTML = "";
+  let count = 0;
+  let total = 0;
   checklist.forEach((item, key) => {
+    total = parseInt(item.price * item.qty);
+    console.log(total);
+    count += item.qty;
     let li = document.createElement("li");
     li.classList.add(
       "flex",
@@ -130,14 +140,34 @@ function reload() {
       "p-2",
       "bg-slate-400",
       "rounded-3xl",
-      "mb-2"
+      "mb-2",
+      "hover:bg-slate-200",
+      "transition-all"
     );
 
     li.innerHTML = `
     <img src="${item.image}"  width="40px"/>
     <p>${item.name}</p>
     <span>${item.price}</span>
+     <div
+        class="flex items-end gap-3 ml-auto px-[20px] py-[5px] bg-slate-300 rounded-full"
+      >
+        <button
+          class="px-[7px] py-[1px] rounded-full bg-slate-600 text-white active:scale-50 transition-all"
+        >
+          +
+        </button>
+        <div class="count text-[1rem] font-[500]">${item.qty}</div>
+        <button
+          class="px-[7px] py-[1px] rounded-full bg-slate-600 text-white active:scale-50 transition-all"
+        >
+          -
+        </button>
+    </div>
     `;
     productlist.appendChild(li);
   });
+
+  quantity.innerHTML = count;
+  totalprice.innerHTML = `<button class="bg-sky-400 w-[90%] py-3 rounded-md">Total price${total}</button>`;
 }
