@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/bf58baaf18.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="main.css" />
+    <title>Document</title>
+  </head>
+  <body class="font-English bg-slate-900">
+    <div class="sm:hidden w-[98%] m-auto mt-2">
+      <!-- Card of coourses for learning -->
+      <theader
+        class="flex justify-between sticky top-0 z-10 p-5 backdrop-blur-lg border-b-[3px] border-b-sky-600"
+      >
+        <h2 class="text-slate-100 text-[1.4rem] font-[500]">
+          <a href="#"> Courses For learning</a>
+        </h2>
+        <div
+          id="shoping"
+          class="mr-5 text-[1.5rem] text-white/40 active:scale-50 transition-all"
+        >
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <span
+          class="bg-red-600 text-white px-[8px] py-[2px] text-[15px] rounded-full absolute bottom-[40px] right-[22px] text-center"
+          >0</span
+        >
+        <!-- information of products -->
+        <div
+          class="inforshoping hidden w-[90%] h-[500px] rounded-3xl z-40 shadow-sha bg-slate-300 m-auto absolute top-[80px] right-[50%] translate-x-[50%] overflow-hidden"
+        >
+          <button
+            id="cancel"
+            class="text-black text-[1.4rem] pt-3 absolute left-[95%] translate-x-[-100%] hover:text-red-700 active:scale-50 transition-all"
+          >
+            <i class="fa-solid fa-x"></i>
+          </button>
+          <div class="w-[90%] m-auto">
+            <h4 class="text-black text-[1.2rem] mt-[20px]">Your Card</h4>
+            <div class="w-full h-[2px] bg-gray-500"></div>
+            <div class="w-full h-[315px] overflow-scroll">
+              <ul id="productlist" class="mt-2">
+                <!-- <li
+                  class="flex items-center gap-5 p-2 bg-slate-400 rounded-3xl mb-2"
+                >
+                  <img src="/public/images/im1.png" alt="" width="50px" />
+                  <p>C++</p>
+                  <span>Price 20$</span>
+                </li> -->
+                <!-- <li
+                  class="flex items-center gap-5 p-2 bg-slate-400 rounded-3xl mb-2"
+                >
+                  <img src="/public/images/im1.png" alt="" width="50px" />
+                  <p>C++</p>
+                  <span>Price 20$</span>
+                </li>
+                <li
+                  class="flex items-center gap-5 p-2 bg-slate-400 rounded-3xl mb-2"
+                >
+                  <img src="/public/images/im1.png" alt="" width="50px" />
+                  <p>C++</p>
+                  <span>Price 20$</span>
+                </li>
+                <li
+                  class="flex items-center gap-5 p-2 bg-slate-400 rounded-3xl mb-2"
+                >
+                  <img src="/public/images/im1.png" alt="" width="50px" />
+                  <p>C++</p>
+                  <span>Price 20$</span>
+                </li>
+                <li
+                  class="flex items-center gap-5 p-2 bg-slate-400 rounded-3xl mb-2"
+                >
+                  <img src="/public/images/im1.png" alt="" width="50px" />
+                  <p>C++</p>
+                  <span>Price 20$</span>
+                </li>
+                <li
+                  class="flex items-center gap-5 p-2 bg-slate-400 rounded-3xl mb-2"
+                >
+                  <img src="/public/images/im1.png" alt="" width="50px" />
+                  <p>C++</p>
+                  <span>Price 20$</span>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+          <!-- payment of products -->
+          <div
+            class="flex fixed bottom-[0] rounded-3xl flex-col items-center w-full py-1 bg-slate-800"
+          >
+            <button class="bg-sky-400 w-[90%] py-3 rounded-md">
+              TotalProces
+            </button>
+            <div>
+              <button
+                class="bg-sky-500 px-[30px] font-[500] text-white py-[10px] rounded-3xl mt-4"
+              >
+                Pay now
+              </button>
+            </div>
+          </div>
+        </div>
+      </theader>
+
+      <div id="products" class="w-[95%] m-auto mt-5"></div>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
